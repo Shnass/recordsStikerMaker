@@ -2,6 +2,7 @@
   "name": "discogs-sticker-generator",
   "version": "1.0.0",
   "main": "src/app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --env-file=.env ./src/app.js",
