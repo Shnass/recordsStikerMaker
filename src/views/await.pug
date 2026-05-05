@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1 please wait...
+    p You are fetching data for store: #{store} and quantity: #{qty}.
+    script.
+      const store = "#{store}";
+      const qty = #{qty};
+
+      fetch('/process', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ store, qty })
+      })
+        .then(res => res.text()) 
+        .then(html => {
+          document.open();
+          document.write(html); 
+          document.close();
+        })
+        .catch(err => {
+          document.body.innerHTML = '<p>Error loading results.</p>';
+          console.error(err);
+        });

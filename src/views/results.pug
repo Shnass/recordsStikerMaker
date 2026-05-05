@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title Results
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/results.css")
+  body
+    #root.releases
+      for card in cards
+        div.release-card
+          .release-name-complex
+            .release-name-complex-text
+              .release-title
+                  if card.label && card.label.image
+                    .release-label-picture
+                      img(src=card.label.image, alt=card.label.name)
+                  .release-title__main
+                    .release-artist
+                      b #{card.artist}
+                    .release-name #{card.title}
+                  .release-price
+                    span #{card.price}
+              .release-details
+                .release-details__itself
+                  .release-country
+                    b #{card.label ? card.label.name : 'Unknown Label'}
+                  .release-country #{card.country}, #{card.year}
+                  .release-genres #{card.styles}
+                .qr-placeholder
+                  .release-qr(data-qrdata=card.id)

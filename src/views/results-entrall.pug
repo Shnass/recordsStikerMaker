@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Results
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/results.css")
+    link(rel="stylesheet", href="/css/results-entrall.css")
+  body
+    #root.releases
+      for card in cards
+        div.release-card
+          .release-name-complex
+            .release-name-complex-text
+              .release-title
+                  .release-title__main
+                    .release-artist
+                      b #{card.artist}
+                      | &nbsp; – #{card.title}
+                      small (#{card.year})
+                    .release-country
+                      | #{card.label ? card.label.name : 'Unknown'}
+                      | |
+                      | #{card.styles}
+                  .release-price
+                    span #{card.price}
+                    em #{card.position}

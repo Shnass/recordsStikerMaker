@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet", href="/css/styles.css")
+    body
+        .form-container
+            h1= message
+            p= text
+            form(action="/fetch" method="post")
+                label(for="store") Enter store name:
+                input(type="text" id="store" name="store" required)
+                br
+                label(for="qty") Enter quantity:
+                input(type="text" id="qty" name="qty" required)
+                br
+                button(type="submit").pushable 
+                    span.front Submit

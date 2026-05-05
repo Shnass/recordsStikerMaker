@@ -1,0 +1,54 @@
+.release-card {
+    width: 33.3333%;
+    height: 3.7125cm;
+    text-transform: none;
+}
+
+
+.release-price{
+    width: 18%;
+    font-size: 0;
+    position: relative;
+    align-content: center;
+    text-align: center;
+    background: #eee;
+    border: 0;
+    font-size: 30px;
+}
+
+.release-price em{
+    text-transform: uppercase;
+    position: absolute;
+    height: 0.6cm;
+    width: 100%;
+    line-height: 0.6cm;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 11px;
+    left: 0;
+    bottom: 0;
+}
+
+.release-price span{
+    transform: none;
+    left: 0;
+    top: 0;
+    position: static;
+}
+
+.release-title__main{
+    border: 0;
+}
+
+.release-title{
+    height: 100%;
+}
+
+.release-artist{
+    font-size: 1.4rem;
+    margin-bottom: 0.3em;
+}
+

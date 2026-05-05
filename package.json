@@ -1,0 +1,26 @@
+{
+  "name": "discogs-sticker-generator",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env ./src/app.js",
+    "build:css": "sass src/public/scss:src/public/css --no-source-map",
+    "watch:css": "sass --watch src/public/scss:src/public/css",
+    "watch:server": "nodemon --ignore ./src/labels.json --env-file=.env ./src/app.js",
+    "dev": "concurrently 'npm run watch:server' 'npm run watch:css'"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "node-sass": "^9.0.0",
+    "pug": "^3.0.3",
+    "sass": "^1.93.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+  }
+}
