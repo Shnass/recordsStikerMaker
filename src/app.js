@@ -6,7 +6,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const viewsPath = path.join(__dirname, 'views');
-const PORT = 3832;
 
 
 app.set('view engine', 'pug')
@@ -30,6 +29,5 @@ app.post('/process', async (req, res) => {
     res.render('results-entrall', { title: 'Results', cards });
   } else res.render('results', { title: 'Results', cards });
 });
-app.listen(PORT, () => {
-  console.log(`Server listening at http://localhost:${PORT}`);
-});
+
+export default app;
